@@ -1,0 +1,40 @@
+name: wedding
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  audioplayers: ^5.2.1
+  cupertino_icons: ^1.0.2
+  get: 4.6.6
+  google_fonts: ^6.1.0
+  flutter: 
+    sdk: flutter
+
+dev_dependencies: 
+  flutter_lints: ^2.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: Josefin
+      fonts:
+        - asset: assets/fonts/josefin_sans.ttf
+    - family: Roboto-Regular
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.03523cf.ttf
+    - family: Roboto-Light
+      fonts:
+        - asset: assets/fonts/Roboto-Light.0cea398.ttf
+    - family: Roboto-Black
+      fonts:
+        - asset: assets/fonts/Roboto-Black.1224b64.ttf
+    - family: Sacramento
+      fonts:
+        - asset: assets/fonts/Sacramento-Regular.5bd7d52.ttf
