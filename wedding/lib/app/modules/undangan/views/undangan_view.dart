@@ -69,19 +69,22 @@ class UndanganView extends GetView<UndanganController> {
                 AnimatedOpacity(
                   opacity: controller.opacityLevel.value,
                   duration: const Duration(seconds: 1),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 0.05 * MediaQuery.of(context).size.width, vertical: 0.01 * MediaQuery.of(context).size.width),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Color(0xff929EAD), width: 1),
-                    ),
-                    child: Text(
-                      "Buka Undangan",
-                      style: TextStyle(
-                          fontFamily: 'Josefin',
-                          color: Color(0xff929EAD),
-                          fontSize:
-                          Theme.of(context).textTheme.titleLarge!.fontSize),
+                  child: InkWell(
+                    onTap: () => Get.offNamed('/isi'),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 0.05 * MediaQuery.of(context).size.width, vertical: 0.01 * MediaQuery.of(context).size.width),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Color(0xff929EAD), width: 1),
+                      ),
+                      child: Text(
+                        "Buka Undangan",
+                        style: TextStyle(
+                            fontFamily: 'Josefin',
+                            color: Color(0xff929EAD),
+                            fontSize:
+                            Theme.of(context).textTheme.titleLarge!.fontSize),
+                      ),
                     ),
                   ),
                 ),
