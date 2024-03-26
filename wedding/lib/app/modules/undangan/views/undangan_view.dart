@@ -10,9 +10,9 @@ class UndanganView extends GetView<UndanganController> {
   const UndanganView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    Timer.periodic(Duration(seconds: 2), (timer) {
-      controller.opacityLevel.value = 1.0;
-    });
+    // Timer.periodic(Duration(seconds: 2), (timer) {
+    //   controller.opacityLevel.value = 1.0;
+    // });
     return Stack(
       children: [
         Image.asset(
@@ -37,25 +37,27 @@ class UndanganView extends GetView<UndanganController> {
                       fontFamily: 'Josefin',
                       color: Color(0xff929EAD),
                       fontSize:
-                      Theme.of(context).textTheme.titleLarge!.fontSize),
+                          Theme.of(context).textTheme.titleLarge!.fontSize),
                 ),
                 CircleAvatar(
-                  backgroundImage: NetworkImage("https://api.our-wedding.link/uploads/66530f70-c502-11ee-86b9-050ab65d5f7b.jpg"),
+                  backgroundImage: AssetImage('assets/images/Mayang&Alan.jpg'),
                   radius: 0.1 * MediaQuery.of(context).size.height,
                 ),
                 Text("Mayang & Alan",
                     style: TextStyle(
                         fontFamily: 'Sacramento',
                         color: Color(0xff929EAD),
-                        fontSize:
-                        Theme.of(context).textTheme.displayMedium!.fontSize)),
+                        fontSize: Theme.of(context)
+                            .textTheme
+                            .displayMedium!
+                            .fontSize)),
                 Text(
                   "Dear",
                   style: TextStyle(
                       fontFamily: 'Josefin',
                       color: Color(0xff929EAD),
                       fontSize:
-                      Theme.of(context).textTheme.titleLarge!.fontSize),
+                          Theme.of(context).textTheme.titleLarge!.fontSize),
                 ),
                 Text(
                   "${Get.parameters['name']}",
@@ -63,16 +65,20 @@ class UndanganView extends GetView<UndanganController> {
                       fontFamily: 'Josefin',
                       color: Color(0xff929EAD),
                       fontSize:
-                      Theme.of(context).textTheme.titleLarge!.fontSize,
+                          Theme.of(context).textTheme.titleLarge!.fontSize,
                       fontWeight: FontWeight.bold),
                 ),
-                AnimatedOpacity(
+                Obx(() => AnimatedOpacity(
                   opacity: controller.opacityLevel.value,
                   duration: const Duration(seconds: 1),
                   child: InkWell(
-                    onTap: () => Get.offNamed('/isi'),
+                    onTap: () => Get.offNamed('/isi', arguments: {
+                      'name': Get.parameters['name'],
+                    }),
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 0.05 * MediaQuery.of(context).size.width, vertical: 0.01 * MediaQuery.of(context).size.width),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 0.05 * MediaQuery.of(context).size.width,
+                          vertical: 0.01 * MediaQuery.of(context).size.width),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Color(0xff929EAD), width: 1),
@@ -82,12 +88,14 @@ class UndanganView extends GetView<UndanganController> {
                         style: TextStyle(
                             fontFamily: 'Josefin',
                             color: Color(0xff929EAD),
-                            fontSize:
-                            Theme.of(context).textTheme.titleLarge!.fontSize),
+                            fontSize: Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .fontSize),
                       ),
                     ),
                   ),
-                ),
+                )),
               ],
             ),
           ),

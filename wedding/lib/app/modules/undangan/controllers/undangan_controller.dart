@@ -11,7 +11,6 @@ class UndanganController extends GetxController {
 
   @override
   void onReady() {
-    opacityLevel.value = opacityLevel.value == 1 ? 0.0 : 1.0;
     super.onReady();
   }
 
